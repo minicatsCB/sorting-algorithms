@@ -1,12 +1,14 @@
 function merge(firstBranch: Array<number>, secondBranch: Array<number>): Array<number> {
-    console.log(`merging... [${firstBranch.toString()}] + [${secondBranch.toString()}]`);
-    const totalLength: number = firstBranch.length + secondBranch.length;
+    const fLength: number = firstBranch.length;
+    const sLength: number = secondBranch.length;
+    const totalLength: number = fLength + sLength;
     const mergeResult: Array<number> = Array(totalLength);
+
     let i: number = 0;
     let f: number = i;
     let s: number = i;
 
-    for(; (f < firstBranch.length) && (s < secondBranch.length); i++ ){
+    while((f < fLength) && (s < sLength)) {
         const fElement: number = firstBranch[f];
         const sElement: number = secondBranch[s];
         if (fElement < sElement) {
@@ -16,14 +18,19 @@ function merge(firstBranch: Array<number>, secondBranch: Array<number>): Array<n
             mergeResult[i] = sElement;
             s++;
         }
+        i++;
     }
 
-    for (; f < firstBranch.length; i++, f++) {
+    while(f < fLength) {
         mergeResult[i] = firstBranch[f];
+        f++;
+        i++;
     }
 
-    for (; s < secondBranch.length; i++, s++) {
+    while(s < sLength) {
         mergeResult[i] = secondBranch[s];
+        s++;
+        i++;
     }
 
     return mergeResult;
