@@ -5,31 +5,31 @@ function merge(firstBranch: Array<number>, secondBranch: Array<number>): Array<n
     const mergeResult: Array<number> = Array(totalLength);
 
     let i: number = 0;
-    let f: number = i;
-    let s: number = i;
+    let fIdx: number = i;
+    let sIdx: number = i;
 
-    while((f < fLength) && (s < sLength)) {
-        const fElement: number = firstBranch[f];
-        const sElement: number = secondBranch[s];
+    while((fIdx < fLength) && (sIdx < sLength)) {
+        const fElement: number = firstBranch[fIdx];
+        const sElement: number = secondBranch[sIdx];
         if (fElement < sElement) {
             mergeResult[i] = fElement;
-            f++;
+            fIdx++;
         } else {
             mergeResult[i] = sElement;
-            s++;
+            sIdx++;
         }
         i++;
     }
 
-    while(f < fLength) {
-        mergeResult[i] = firstBranch[f];
-        f++;
+    while(fIdx < fLength) {
+        mergeResult[i] = firstBranch[fIdx];
+        fIdx++;
         i++;
     }
 
-    while(s < sLength) {
-        mergeResult[i] = secondBranch[s];
-        s++;
+    while(sIdx < sLength) {
+        mergeResult[i] = secondBranch[sIdx];
+        sIdx++;
         i++;
     }
 
