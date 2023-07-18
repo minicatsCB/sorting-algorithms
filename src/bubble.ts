@@ -24,7 +24,3 @@ function sortDesc(arr: Array<number>): Array<number> {
 
     return arr;
 }
-
-let arr = [9, 1, 8, 2, 7, 3];
-let res = sortDesc(arr);
-console.log(res);
