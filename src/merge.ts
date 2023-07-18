@@ -11,7 +11,7 @@ function mergeAsc(firstBranch: Array<number>, secondBranch: Array<number>): Arra
     while((fIdx < fLength) && (sIdx < sLength)) {
         const fElement: number = firstBranch[fIdx];
         const sElement: number = secondBranch[sIdx];
-        if (fElement < sElement) {
+        if (fElement < sElement) { // The DESC version only differs in that it uses > instead of <
             mergeResult[i] = fElement;
             fIdx++;
         } else {
