@@ -2,11 +2,11 @@ import { swap } from "./common";
 
 // It starts from the next to last element of the array and swaps greater numbers to the right until it finds a number greater than itself
 export function sortAsc(arr: Array<number>): Array<number> {
-    for (let i = arr.length - 2; i >= 0; i--) {
+    for (let i = 1; i <= arr.length - 1; i++) {
         let j = i;
-        while((j < arr.length - 1) && (arr[j] > arr[j+1])) {
-            arr = swap(arr, j, j + 1);
-            j++;
+        while((j > 0) && (arr[j] < arr[j - 1])) {  // j: am I less than my left mate? If yes, take me as close as possible to the beginning of the array until I find a mate less than me. If so, leave me there and continue with te mate that was to my right originally
+            arr = swap(arr, j, j - 1);
+            j--;
         }
     }
 
