@@ -1,4 +1,4 @@
-function power(base: number, exp: number): number {
+export function power(base: number, exp: number): number {
     if(exp <= 0) {
         return 1;
     }
@@ -6,7 +6,7 @@ function power(base: number, exp: number): number {
     return base * power(base, exp - 1);
 }
 
-function factorial(n: number): number {
+export function factorial(n: number): number {
     if(n <= 0) {
         return 1;
     }
@@ -14,7 +14,7 @@ function factorial(n: number): number {
     return n * factorial(n - 1);
 }
 
-function itPower(base: number, exp: number): number {
+export function itPower(base: number, exp: number): number {
     let acc = 1;
     for (let i = 0; i < exp; i++) {
         acc = acc * base;
@@ -22,7 +22,7 @@ function itPower(base: number, exp: number): number {
     return acc;
 }
 
-function itFactorial(n: number): number {
+export function itFactorial(n: number): number {
     let acc = 1;
     for (let i = n; i > 0; i--) {
         acc = acc * i;
